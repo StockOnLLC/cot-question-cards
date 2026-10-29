@@ -15,6 +15,22 @@
 
 **Repository:** [https://github.com/StockOnLLC/question-cards](https://github.com/StockOnLLC/question-cards)
 
+
+<p align="center">
+  <img src="docs/brand/hero-question-cards.png" alt="CoT Question Cards — plan alignment for agents" width="100%" />
+</p>
+
+### Brand visuals
+
+![Optimized Solution fission](docs/brand/diagram-optimized-solution.png)
+
+![Discipline layering](docs/brand/diagram-discipline-layering.png)
+
+![Related ≠ same product — vs grill-me](docs/brand/diagram-vs-grill.png)
+
+![IDE compatibility](docs/brand/diagram-ide-compatibility.png)
+
+
 **Skill bodies:**
 - Core loop (canonical): [`skills/question-cards/SKILL.md`](./skills/question-cards/SKILL.md)
 - Compat alias: [`skills/cot-question-cards/SKILL.md`](./skills/cot-question-cards/SKILL.md) → points to `question-cards`
@@ -1411,6 +1427,11 @@ License: MIT.
 
 > 以下为给中文操作者的简明附录。英文正文保持纯英文；中英不要在同一句或同一表头里混写。  
 > 中文对外产品名：**闪电问**。英文名：**Question Cards**。Skill id：`question-cards`。不要叫「问题卡」，不要叫 Grill / grill-me。
+
+<p align="center">
+  <img src="docs/brand/wordmark-shandianwen.png" alt="闪电问 Question Cards" width="70%" />
+</p>
+
 
 ## 闪电问是什么
 
