@@ -8,25 +8,28 @@
 [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-SKILL.md-black.svg)](#installation)
 [![Works with](https://img.shields.io/badge/Claude%20Code%20%7C%20Coco%20%7C%20Cursor%20%7C%20Codex%20%7C%20WorkBuddy%20%7C%20CodeBuddy%20%7C%20OpenCode%20%7C%20Gemini%20%7C%20Windsurf%20%7C%20Cline%20%7C%20CoTree-compatible-blue.svg)](#installation)
 [![Related](https://img.shields.io/badge/vs-grill--me%20%7C%20AskUserQuestion%20%7C%20grilling-orange.svg)](#positioning-versus-grill-me-grilling-and-askuserquestion)
-[![SEO](https://img.shields.io/badge/Agent%20Skill-plan%20alignment%20%7C%20Goal%20Contract-informational.svg)](#seo-and-discovery-keywords)
+[![SEO](https://img.shields.io/badge/Agent%20Skill-plan%20alignment%20%7C%20Goal%20Contract-informational.svg)](#tldr)
 
-> **External product name (English):** **CoT Question Cards** (Chain of Thought Question Cards).  
-> **Never brand this product as Grill, grill-me, grilling, or grill-with-docs.** Those names belong to related prior art and search neighborhoods; this skill is a different loop with Hard Timing rules. The Chinese product name lives only in the Chinese appendix at the end of this README — never use the common mistranslation that means “question card” as the product name.
+**CoT Question Cards** (Chain of Thought Question Cards) is a public Agent Skill (`SKILL.md`) for plan alignment and design interview work. It runs Macro Cards → private Multi-Scheme Fission → exactly one Optimized Solution → execute → Post-Execution Regression. Skill id: `question-cards` (compat alias `cot-question-cards`). Companion for one-off A/B/C picks: `choice-cards`.
 
 **Repository:** [https://github.com/StockOnLLC/cot-question-cards](https://github.com/StockOnLLC/cot-question-cards)
 
 
 <p align="center">
-  <img src="docs/brand/hero-question-cards.png" alt="CoT Question Cards — plan alignment for agents" width="100%" />
+  <img src="docs/brand/hero-cot-question-cards.png" alt="CoT Question Cards — Chain of Thought plan alignment" width="100%" />
 </p>
 
 ### Brand visuals
+
+![CoT Question Cards hero](docs/brand/hero-question-cards.png)
+
+![Master Loop](docs/brand/diagram-master-loop.png)
 
 ![Optimized Solution fission](docs/brand/diagram-optimized-solution.png)
 
 ![Discipline layering](docs/brand/diagram-discipline-layering.png)
 
-![Related ≠ same product — vs grill-me](docs/brand/diagram-vs-grill.png)
+![vs grill-me timing](docs/brand/diagram-vs-grill.png)
 
 ![IDE compatibility](docs/brand/diagram-ide-compatibility.png)
 
@@ -62,12 +65,11 @@
 20. [Relationship to Code Fission](#relationship-to-code-fission-and-design-trees)
 21. [FAQ](#faq)
 22. [Glossary](#glossary)
-23. [SEO and discovery keywords](#seo-and-discovery-keywords)
-24. [Contributing](#contributing)
-25. [License](#license)
-26. [Links](#links)
-27. [Appendices](#appendices)
-28. [Chinese appendix](#chinese-appendix)
+23. [Contributing](#contributing)
+24. [License](#license)
+25. [Links](#links)
+26. [Appendices](#appendices)
+27. [Chinese appendix](#chinese-appendix)
 
 ---
 
@@ -81,7 +83,7 @@
 | A **Satisfied Card only after execute** (Post-Execution Regression) | Satisfaction glued to the first swipe deck of Macro Cards |
 | Card UX compatible with `AskUserQuestion`, `AskQuestion`, `request_user_input`, and Grok Bot widgets | A product branded as Grill |
 
-**One sentence:** Question Cards is an Agent Skill (`SKILL.md`) that keeps structured question widgets for plan alignment and design interview work, but forbids mid-loop scheme voting and forbids Satisfied Cards until the unique Optimized Solution has been executed.
+**One sentence:** CoT Question Cards is an Agent Skill (`SKILL.md`) that keeps structured question widgets for plan alignment and design interview work, but forbids mid-loop scheme voting and forbids Satisfied Cards until the unique Optimized Solution has been executed.
 
 **Five beats:**
 
@@ -106,25 +108,25 @@ A typical grill-me or grilling session surfaces several partial schemes and asks
 - Creates decision fatigue before any Optimized Solution exists
 - Confuses **macro goal clarity** with **micro implementation taste**
 
-Question Cards treats Multi-Scheme Fission as **Agent-private**. The user never sees a shortlist of half-baked winners mid-loop. The Agent expands schemes, applies hard gates and guardrails, and returns **exactly one** Optimized Solution.
+CoT Question Cards treats Multi-Scheme Fission as **Agent-private**. The user never sees a shortlist of half-baked winners mid-loop. The Agent expands schemes, applies hard gates and guardrails, and returns **exactly one** Optimized Solution.
 
 ### Failure mode 2 — Satisfaction asked too early
 
-Many card UIs make it easy to append “Are you satisfied?” to the first swipe group. That destroys the regression loop. Satisfaction before execution is theater: there is nothing concrete to be satisfied about. Question Cards hard-codes the opposite:
+Many card UIs make it easy to append “Are you satisfied?” to the first swipe group. That destroys the regression loop. Satisfaction before execution is theater: there is nothing concrete to be satisfied about. CoT Question Cards hard-codes the opposite:
 
 > Satisfied / not-satisfied cards **MUST NOT** appear with Phase 1 Macro Cards. Ask satisfied **only after** (1) the user answered Phase 1, (2) the Agent delivered the unique Optimized Solution **and executed it**, (3) the **Post-Execution Regression** round.
 
 ### Failure mode 3 — Mixing macro and micro in one deck
 
-Macro questions ask what success is, for whom, and what is out of scope. Micro questions ask which module, which API, which button color. Mixing them in one AskUserQuestion / AskQuestion / request_user_input deck creates false precision: the user “decides” implementation details before the Goal Contract exists. Question Cards forbids micro preference votes during Phase 1 and Phase 2.
+Macro questions ask what success is, for whom, and what is out of scope. Micro questions ask which module, which API, which button color. Mixing them in one AskUserQuestion / AskQuestion / request_user_input deck creates false precision: the user “decides” implementation details before the Goal Contract exists. CoT Question Cards forbids micro preference votes during Phase 1 and Phase 2.
 
 ### Failure mode 4 — Naming collision with Grill
 
-Teams searching for grill-me, grilling, Builder.io grill-me, nicolasgalvez grilling, or “Grill the plan” often want structured cards. If your product also brands itself Grill, you inherit their timing habits and SEO confusion. **Question Cards** keeps the card UX neighborhood (AskUserQuestion family, choice cards, question widgets) while owning a distinct loop name and a distinct Hard Timing rule.
+Teams searching for grill-me, grilling, Builder.io grill-me, nicolasgalvez grilling, or “Grill the plan” often want structured cards. If your product also brands itself Grill, you inherit their timing habits and SEO confusion. **CoT Question Cards** keeps the card UX neighborhood (AskUserQuestion family, choice cards, question widgets) while owning a distinct loop name and a distinct Hard Timing rule.
 
 ### Failure mode 5 — No execute step
 
-Some interview skills stop at “shared understanding.” Shared understanding without shipping is unfinished work. Question Cards requires the Agent to **deliver and execute** the unique Optimized Solution before opening the regression Satisfied Card. Execution may mean: push a repo, publish a skill, update a config, write the PR, configure topics — whatever the Goal Contract defined as done.
+Some interview skills stop at “shared understanding.” Shared understanding without shipping is unfinished work. CoT Question Cards requires the Agent to **deliver and execute** the unique Optimized Solution before opening the regression Satisfied Card. Execution may mean: push a repo, publish a skill, update a config, write the PR, configure topics — whatever the Goal Contract defined as done.
 
 ### Failure mode 6 — Inherited assumptions smuggled into the goal
 
@@ -132,19 +134,8 @@ Fashion (“everyone uses grill-me”), vendor defaults, and analogy can sneak i
 
 ### Why Agent Skills make this worse if timing is wrong
 
-Modern hosts — Claude Code, Coco, Cursor, OpenAI Codex, WorkBuddy, CodeBuddy, OpenCode, Gemini CLI, Windsurf, Cline, Continue, Trae, Zed, Copilot, CoTree, Grok Bot, and more — make cards cheap. `AskUserQuestion`, `AskQuestion`, `request_user_input`, and in-chat widgets lower the friction of asking. Lower friction without timing discipline means more mid-loop votes. Question Cards is the timing discipline layer on top of those card primitives.
+Modern hosts — Claude Code, Coco, Cursor, OpenAI Codex, WorkBuddy, CodeBuddy, OpenCode, Gemini CLI, Windsurf, Cline, Continue, Trae, Zed, Copilot, CoTree, Grok Bot, and more — make cards cheap. `AskUserQuestion`, `AskQuestion`, `request_user_input`, and in-chat widgets lower the friction of asking. Lower friction without timing discipline means more mid-loop votes. CoT Question Cards is the timing discipline layer on top of those card primitives.
 
-### What “high information density” means for this skill
-
-Readers and search engines should leave knowing:
-
-- How Macro Cards differ from micro preference polls
-- When the Satisfied Card is legal
-- How Goal Contract differs from Optimized Solution
-- How Multi-Scheme Fission stays Agent-private
-- How this relates to grill-me, grilling, grill-with-docs, AskUserQuestion, choice-cards, agentskills.io, anthropics/skills, Terminal Skills, `npx skills add`, plugin marketplace, CLAUDE.md, and AGENTS.md
-
-That is why this document stays long on purpose — without claiming ownership of Builder.io grill-me, nicolasgalvez grilling, Matt Pocock-style skills ecosystems, Filip Hric interactive SKILL.md notes, or Anthropic’s anthropics/skills repository.
 
 ---
 
@@ -152,7 +143,7 @@ That is why this document stays long on purpose — without claiming ownership o
 
 ### Short comparison table
 
-| Dimension | grill-me / grilling (typical) | AskUserQuestion / AskQuestion / request_user_input alone | choice-cards companion | Question Cards |
+| Dimension | grill-me / grilling (typical) | AskUserQuestion / AskQuestion / request_user_input alone | choice-cards companion | CoT Question Cards |
 | --- | --- | --- | --- | --- |
 | Primary job | Relentless interview / shared understanding | Collect answers via structured UI | One-off A/B/C pick | Plan/design alignment with Hard Timing |
 | Mid-fission votes | Often yes | Possible if author dumps schemes | N/A (single pick) | **Forbidden** |
@@ -171,13 +162,13 @@ That is why this document stays long on purpose — without claiming ownership o
 
 We reject: branding as Grill; mid-fission A/B votes; Satisfied Cards in the Phase 1 swipe group; stopping at “alignment” without an executed Optimized Solution.
 
-### AskUserQuestion is a tool; Question Cards is a loop
+### AskUserQuestion is a tool; CoT Question Cards is a loop
 
-AskUserQuestion (Claude Code), AskQuestion (Cursor), and request_user_input (Codex) are **primitives**. Question Cards is the **Master Loop** that decides *when* those primitives may fire and *what* they may ask.
+AskUserQuestion (Claude Code), AskQuestion (Cursor), and request_user_input (Codex) are **primitives**. CoT Question Cards is the **Master Loop** that decides *when* those primitives may fire and *what* they may ask.
 
 ### choice-cards is a companion, not a replacement
 
-The companion skill [`skills/choice-cards/SKILL.md`](./skills/choice-cards/SKILL.md) handles one-off A/B/C picks with no decision tree. If you need plan alignment, design interview, Goal Contract, Multi-Scheme Fission, unique Optimized Solution, execute, and Post-Execution Regression — use **Question Cards**, not choice-cards.
+The companion skill [`skills/choice-cards/SKILL.md`](./skills/choice-cards/SKILL.md) handles one-off A/B/C picks with no decision tree. If you need plan alignment, design interview, Goal Contract, Multi-Scheme Fission, unique Optimized Solution, execute, and Post-Execution Regression — use **CoT Question Cards**, not choice-cards.
 
 ### Frontier questions and design trees
 
@@ -189,11 +180,11 @@ Frontier-style “keep asking until the tree is sharp” energy is welcome in Ph
 
 ### Persona 1 — Founder / PM sharpening a Goal Contract
 
-You need checkable success criteria before engineering burns a week. You have used grill-me or grilling before and liked the pressure, but you hated voting on three incomplete roadmaps. You want Question Cards to ask Macro Cards, write a Goal Contract, deliver one Optimized Solution, and actually ship the first slice before asking if you are satisfied.
+You need checkable success criteria before engineering burns a week. You have used grill-me or grilling before and liked the pressure, but you hated voting on three incomplete roadmaps. You want CoT Question Cards to ask Macro Cards, write a Goal Contract, deliver one Optimized Solution, and actually ship the first slice before asking if you are satisfied.
 
 ### Persona 2 — Agent Skill author packaging for Claude Code / Cursor / Codex
 
-You maintain `SKILL.md` files, care about agentskills.io discovery, `npx skills add`, plugin marketplace metadata, CLAUDE.md, and AGENTS.md. You want a public skill that SEO-connects to AskUserQuestion, choice cards, grill-me, and plan alignment — while teaching a stricter loop. You install Question Cards as a Claude Code skill, Cursor skill, Codex skill, or Grok Bot skill.
+You maintain `SKILL.md` files, care about agentskills.io discovery, `npx skills add`, plugin marketplace metadata, CLAUDE.md, and AGENTS.md. You want a public skill that SEO-connects to AskUserQuestion, choice cards, grill-me, and plan alignment — while teaching a stricter loop. You install CoT Question Cards as a Claude Code skill, Cursor skill, Codex skill, or Grok Bot skill.
 
 ### Persona 3 — Staff engineer tired of mid-design polls
 
@@ -227,7 +218,7 @@ You run OpenCode, Gemini CLI, Windsurf, Cline, CoTree/contree, or a fleet of Age
 
 ### Why the rule exists
 
-Without this rule, Question Cards collapses into generic grilling with nicer labels. The Satisfied Card is powerful precisely because it is scarce. Scarcity forces the Agent to finish work before seeking approval theater.
+Without this rule, CoT Question Cards collapses into generic grilling with nicer labels. The Satisfied Card is powerful precisely because it is scarce. Scarcity forces the Agent to finish work before seeking approval theater.
 
 ### What “execute” means
 
@@ -296,7 +287,7 @@ Phase 4  Micro tweak (default OFF; user-explicit only)
 Point hosts at the skill; do not paste the entire Master Loop into every rules file. A one-line pointer plus Hard Timing is enough:
 
 ```markdown
-Plan / design alignment → skill question-cards (Question Cards).
+Plan / design alignment → skill question-cards (CoT Question Cards).
 Hard Timing: Satisfied Card only after execute.
 ```
 
@@ -312,7 +303,7 @@ Hard Timing: Satisfied Card only after execute.
 
 ### First Principles versus Socratic interview theater
 
-A Socratic interview that only asks clever questions can still accept inherited assumptions. First Principles work in Question Cards means: strip the ask to bedrock constraints before you design schemes.
+A Socratic interview that only asks clever questions can still accept inherited assumptions. First Principles work in CoT Question Cards means: strip the ask to bedrock constraints before you design schemes.
 
 ### Examples of bedrock vs inherited
 
@@ -338,7 +329,7 @@ A Socratic interview that only asks clever questions can still accept inherited 
 - **Success look like** — checkable, not adjectives
 - **For whom / not for whom** — audience and non-audience
 - **Out of scope** — explicit non-goals
-- **Bedrock constraints** — hard limits, compliance, brand rules (including: external name is Question Cards, never Grill)
+- **Bedrock constraints** — hard limits, compliance, brand rules (including: external name is CoT Question Cards, never Grill)
 - **Cost of being wrong** — gate tightness
 
 ### Round structure
@@ -392,8 +383,8 @@ After Phase 1 clarity exit, **Agent-private**, with **no** user confirm card. Pr
 | Field | Meaning |
 | --- | --- |
 | Success | Checkable. Prefer verbs and artifacts. Avoid “great SEO” without a proxy metric. |
-| Scope / non-goals | What you will refuse. Example: do not rebrand Question Cards as Grill for keyword capture. |
-| Bedrock | Hard constraints: safety, legal, brand (English external name Question Cards), host targets, license (MIT). |
+| Scope / non-goals | What you will refuse. Example: do not rebrand CoT Question Cards as Grill for keyword capture. |
+| Bedrock | Hard constraints: safety, legal, brand (English external name CoT Question Cards), host targets, license (MIT). |
 | Gates | DQ rules for Phase 2 schemes (e.g. DQ mid-fission votes; DQ dual champions). |
 | Regression | Satisfied only post-execute. |
 
@@ -403,7 +394,7 @@ After Phase 1 clarity exit, **Agent-private**, with **no** user confirm card. Pr
 ## Goal Contract
 - Success: https://github.com/StockOnLLC/cot-question-cards is public; MIT LICENSE; README is English-first with Chinese appendix only; skills/question-cards/SKILL.md and skills/choice-cards/SKILL.md present; topics include agent-skill, question-cards, askuserquestion, grill-me (as related search), goal-contract, optimized-solution.
 - Scope / non-goals: No Grill product branding; no bilingual mash in the English README body; no mid-fission user votes in the skill rules.
-- Bedrock: External English name is Question Cards (id question-cards); Satisfied Card only post-execute; unique Optimized Solution required.
+- Bedrock: External English name is CoT Question Cards (id question-cards); Satisfied Card only post-execute; unique Optimized Solution required.
 - Gates: DQ schemes that insert Satisfied Card into Phase 1; DQ dual champions.
 - Regression: after cold install + toy Phase 1 (no satisfied option) + execute evidence.
 ```
@@ -447,7 +438,7 @@ After Phase 1 clarity exit, **Agent-private**, with **no** user confirm card. Pr
 
 ## Phase 2 — Multi-Scheme Fission (Agent-private)
 
-Phase 2 borrows the **select-one-champion skeleton** from Code Fission-style inner loops, applied at the plan layer. Full Code Fission release tournaments stay in Code Fission proper. Question Cards expands **2–5** executable schemes (default 3, max 5), gates them, and keeps **exactly one** Optimized Solution.
+Phase 2 borrows the **select-one-champion skeleton** from Code Fission-style inner loops, applied at the plan layer. Full Code Fission release tournaments stay in Code Fission proper. CoT Question Cards expands **2–5** executable schemes (default 3, max 5), gates them, and keeps **exactly one** Optimized Solution.
 
 ### 2.1 Seed
 
@@ -562,7 +553,7 @@ Map Phase 1 / 3 only.
 
 ### choice-cards overlap
 
-For a single pick with no tree, use choice-cards. For Master Loop work, use Question Cards.
+For a single pick with no tree, use choice-cards. For Master Loop work, use CoT Question Cards.
 
 ### WorkBuddy / CodeBuddy — Import Skill + widgets
 
@@ -589,7 +580,7 @@ Compatible with the **Agent Skills** layout (`SKILL.md` + YAML frontmatter). For
 **Skill id / frontmatter `name`:** **`question-cards`** (kebab-case; folder name must match).  
 **Compat alias folder:** `skills/cot-question-cards` (thin redirect; prefer canonical for new installs).
 
-**English product name:** Question Cards  
+**English product name:** CoT Question Cards  
 **Repo:** https://github.com/StockOnLLC/cot-question-cards  
 **Related search nouns (not product identity):** question cards, AskUserQuestion, AskQuestion, request_user_input, choice-cards, grill-me, grilling, plan alignment, Goal Contract, Optimized Solution, Agent Skills, SKILL.md, Terminal Skills, agentskills.io, CoTree, contree
 
@@ -617,7 +608,7 @@ npx skills add StockOnLLC/cot-question-cards
 
 Verify the destination folder name is **`question-cards`** and frontmatter `name: question-cards`.
 
-Debug: verbose/list flags → confirm path → restart host → check description triggers include “Question Cards”, “plan alignment”, “Goal Contract”, “Optimized Solution”.
+Debug: verbose/list flags → confirm path → restart host → check description triggers include “CoT Question Cards”, “plan alignment”, “Goal Contract”, “Optimized Solution”.
 
 ### Master compatibility matrix (quick index)
 
@@ -670,12 +661,12 @@ cp -R skills/question-cards .claude/skills/question-cards
 cp -R skills/choice-cards .claude/skills/choice-cards
 ```
 
-**Invoke:** `/question-cards` or NL (“use Question Cards to align this plan”, “Goal Contract with question cards timing”).  
+**Invoke:** `/question-cards` or NL (“use CoT Question Cards to align this plan”, “Goal Contract with question cards timing”).  
 **Optional `CLAUDE.md`:**
 
 ```markdown
 For plan alignment / design interview / Goal Contract work, use the question-cards skill
-(Question Cards). Obey Hard Timing: Satisfied Card only after execute.
+(CoT Question Cards). Obey Hard Timing: Satisfied Card only after execute.
 ```
 
 **Debug:** `ls …/question-cards/SKILL.md` → `name: question-cards` matches folder → new session → tune `description:` triggers → Phase 1/3 via `AskUserQuestion`; Phase 2 silent.
@@ -704,11 +695,11 @@ cp -R skills/question-cards ~/.agents/skills/question-cards
 cp -R skills/choice-cards ~/.agents/skills/choice-cards
 ```
 
-**Invoke:** “use Question Cards”, “align this with question-cards”.  
+**Invoke:** “use CoT Question Cards”, “align this with question-cards”.  
 **Optional `AGENTS.md`:**
 
 ```markdown
-Plan / design alignment → skill question-cards (Question Cards).
+Plan / design alignment → skill question-cards (CoT Question Cards).
 Hard Timing: no Satisfied Card until after execute.
 Card primitive: AskQuestion for Phase 1 and Phase 3 Post-Execution Regression only.
 ```
@@ -750,7 +741,7 @@ cp -R skills/question-cards .codebuddy/skills/question-cards
 cp -R skills/choice-cards .codebuddy/skills/choice-cards
 ```
 
-**Invoke:** skill name or NL (“Question Cards”). Prefer structured widgets when available.  
+**Invoke:** skill name or NL (“CoT Question Cards”). Prefer structured widgets when available.  
 **Debug:** re-import → verify folder → restart → Import Skill error log.
 
 ---
@@ -803,7 +794,7 @@ cp -R skills/question-cards ~/.agents/skills/question-cards
 cp -R skills/question-cards .grok/skills/question-cards
 ```
 
-**Invoke:** load **question-cards** / product name **Question Cards**. Widgets / steps / `allowCustom` for Phase 1 and Phase 3 only.  
+**Invoke:** load **question-cards** / product name **CoT Question Cards**. Widgets / steps / `allowCustom` for Phase 1 and Phase 3 only.  
 **Debug:** refresh bot skill library; verify Satisfied Card not in macro swipe group.
 
 ---
@@ -817,7 +808,7 @@ npx skills add StockOnLLC/cot-question-cards
 #   .../choice-cards/SKILL.md   # if companion selected
 ```
 
-**Marketplace keywords:** Agent Skill, SKILL.md, Question Cards, question cards, AskUserQuestion, AskQuestion, request_user_input, choice-cards, Claude Code, Coco, Cursor, Codex, WorkBuddy, CodeBuddy, OpenCode, Gemini CLI, Windsurf, Cline, Continue, Trae, Zed, Copilot, Roo, Goose, Amp, Junie, AiderDesk, Cortex, Grok, Kiro, Warp, Antigravity, CoTree, contree, plan alignment, Goal Contract, Optimized Solution, grill-me (related), grilling (related).
+**Marketplace keywords:** Agent Skill, SKILL.md, CoT Question Cards, question cards, AskUserQuestion, AskQuestion, request_user_input, choice-cards, Claude Code, Coco, Cursor, Codex, WorkBuddy, CodeBuddy, OpenCode, Gemini CLI, Windsurf, Cline, Continue, Trae, Zed, Copilot, Roo, Goose, Amp, Junie, AiderDesk, Cortex, Grok, Kiro, Warp, Antigravity, CoTree, contree, plan alignment, Goal Contract, Optimized Solution, grill-me (related), grilling (related).
 
 ---
 
@@ -1052,7 +1043,7 @@ Import `skills/question-cards/SKILL.md` into the host’s skill/prompt root when
 ---
 name: question-cards
 description: >-
-  Question Cards. Use when aligning a plan or design: Phase 1 Macro Cards only
+  CoT Question Cards. Use when aligning a plan or design: Phase 1 Macro Cards only
   (no satisfaction); Agent Multi-Scheme Fission to one Optimized Solution then
   execute; ask Satisfied Card only at Post-Execution Regression. …
 ---
@@ -1133,8 +1124,8 @@ Suggested topics: `agent-skill`, `agent-skills`, `skill-md`, `question-cards`, `
 ### Example D — Migrating a noisy grill-me session
 
 **Before:** three incomplete roadmaps + early “are you happy?”  
-**After (Question Cards):** Macro Cards → Goal Contract → private Multi-Scheme Fission → one Optimized Solution → execute → Satisfied Card.  
-**Prompt rewrite:** “Grill me on this plan” → “Run Question Cards Hard Timing on this plan.”
+**After (CoT Question Cards):** Macro Cards → Goal Contract → private Multi-Scheme Fission → one Optimized Solution → execute → Satisfied Card.  
+**Prompt rewrite:** “Grill me on this plan” → “Run CoT Question Cards Hard Timing on this plan.”
 
 ### Example E — Recursive planning after a failed regression
 
@@ -1147,7 +1138,7 @@ Suggested topics: `agent-skill`, `agent-skills`, `skill-md`, `question-cards`, `
 ## Migration guide from grill-me / grilling
 
 1. **Inventory** — list where Grill branding and mid-fission votes appear.  
-2. **Replace names** — product → Question Cards; keep grill-me only as related prior art.  
+2. **Replace names** — product → CoT Question Cards; keep grill-me only as related prior art.  
 3. **Split templates** — Macro Cards vs regression Satisfied Card.  
 4. **Ban mid-fission votes.**  
 5. **Add Goal Contract + Optimized Solution artifacts.**  
@@ -1203,19 +1194,19 @@ AskUserQuestion muscle memory stays; timing changes.
 
 ## Relationship to Code Fission and design trees
 
-Question Cards borrows the **select-one-champion skeleton** at the plan layer. Full Code Fission tournaments (many variants, real fixtures) stay in Code Fission proper. Design trees that reopen every micro branch mid-fission are out of scope until Phase 4 (explicit, optional).
+CoT Question Cards borrows the **select-one-champion skeleton** at the plan layer. Full Code Fission tournaments (many variants, real fixtures) stay in Code Fission proper. Design trees that reopen every micro branch mid-fission are out of scope until Phase 4 (explicit, optional).
 
 ---
 
 ## FAQ
 
-### Is Question Cards just grill-me with a new name?
+### Is CoT Question Cards just grill-me with a new name?
 
 No. Related search neighborhood; different Hard Timing, Goal Contract, unique Optimized Solution, execute-before-satisfied.
 
 ### Can I still use AskUserQuestion?
 
-Yes — as the Phase 1 / Phase 3 primitive. Question Cards is the loop that times it.
+Yes — as the Phase 1 / Phase 3 primitive. CoT Question Cards is the loop that times it.
 
 ### Does this work as a Cursor skill and a Claude Code skill?
 
@@ -1227,7 +1218,7 @@ Use text-card fallback. Hard Timing still applies.
 
 ### How does choice-cards relate?
 
-One-off picks. Master Loop → Question Cards.
+One-off picks. Master Loop → CoT Question Cards.
 
 ### Why mention Matt Pocock-style skills ecosystems / Filip Hric / anthropics/skills / agentskills.io / Terminal Skills / npx skills add?
 
@@ -1275,7 +1266,7 @@ Feedback → Phase 2 (or Phase 1 if macro wrong) → new Optimized Solution → 
 
 | Term | Meaning |
 | --- | --- |
-| Question Cards | English external product name |
+| CoT Question Cards | English external product name |
 | Macro Cards | Phase 1 load-bearing goal questions |
 | Goal Contract | Agent-written success/scope/bedrock/gates/regression artifact |
 | Multi-Scheme Fission | Agent-private expansion + gates of 2–5 schemes |
@@ -1290,40 +1281,11 @@ Feedback → Phase 2 (or Phase 1 if macro wrong) → new Optimized Solution → 
 
 ---
 
-## SEO and discovery keywords
-
-**Primary:** Question Cards, Agent Skill, SKILL.md, plan alignment, Goal Contract, Optimized Solution, Hard Timing, Macro Cards, Multi-Scheme Fission, Post-Execution Regression, AskUserQuestion, AskQuestion, request_user_input, choice-cards.
-
-**Hosts:** Claude Code, Coco, Cursor, Codex, WorkBuddy, CodeBuddy, OpenCode, Gemini CLI, Windsurf, Cline, Continue, Trae, Zed, Copilot, Roo, Goose, Amp, Junie, Aider, AiderDesk, Cortex, Grok, Kiro, Warp, Antigravity, CoTree, contree, Web IDEs, Codespaces, Gitpod.
-
-**Related prior art (not identity):** grill-me, grilling, grill-with-docs, Builder.io grill-me, nicolasgalvez grilling, Socratic interview, design interview, spec sharpening, product discovery.
-
-**Packaging:** agentskills.io, Terminal Skills, `npx skills add`, anthropics/skills, plugin marketplace, CLAUDE.md, AGENTS.md.
-
----
 
 ## Contributing
 
-### Contribution guidelines
+Pull requests that improve Hard Timing clarity, host install paths, or Goal Contract examples are welcome. Keep behavior changes in sync with [`skills/question-cards/SKILL.md`](./skills/question-cards/SKILL.md). File timing bugs with host name, transcript snippet, and which phase showed a Satisfied Card or mid-fission vote too early.
 
-1. Keep English body free of Chinese characters; Chinese only in the Chinese appendix.  
-2. Never brand as Grill / grill-me / grilling / grill-with-docs.  
-3. Preserve Hard Timing and singular Optimized Solution.  
-4. Update [`skills/question-cards/SKILL.md`](./skills/question-cards/SKILL.md) when behavior changes; keep README synchronized.  
-5. Keep `cot-question-cards` as a thin alias only.  
-6. When adding a host, include install path, card primitive, and a debug note.  
-7. Use Title Case for key terms: Macro Cards, Goal Contract, Optimized Solution, Master Loop, Hard Timing, First Principles, Multi-Scheme Fission, Post-Execution Regression, Satisfied Card.
-
-### Local preview
-
-```bash
-# read SKILL.md; install into a host skills directory; run a toy Phase 1
-# confirm no Satisfied Card in Phase 1; execute; then regression
-```
-
-### Reporting timing bugs
-
-File issues with: host, transcript snippet, which phase illegally showed Satisfied Card or mid-fission votes.
 
 ---
 
@@ -1368,16 +1330,6 @@ MIT — see [LICENSE](LICENSE). Copyright (c) 2026 StockOn.
 
 After execute evidence is shown: one Satisfied Card with adopt/close, recurse-with-feedback, macro-rewrite, expand.
 
-### Mapping search intent to sections
-
-| Intent | Section |
-| --- | --- |
-| Install Cursor / Claude / Codex / CoTree | Installation |
-| vs grill-me | Positioning, Migration |
-| When can I ask satisfied? | Hard Timing, Phase 3 |
-| What is Goal Contract? | Goal Contract deep dive, Glossary |
-| Optimized Solution meaning | Phase 2, Glossary |
-| choice-cards | Positioning, Suite layout |
 
 ### Extended Goal Contract examples
 
@@ -1387,39 +1339,13 @@ After execute evidence is shown: one Satisfied Card with adopt/close, recurse-wi
 
 **Support ops redesign:** First response SLA 14 days; escalation documented; templates live. Regression post-window.
 
-**Skill marketplace listing:** Listing live; install works; description triggers include Question Cards, plan alignment, Goal Contract, AskUserQuestion; name is Question Cards not Grill. Regression after cold install.
+**Skill marketplace listing:** Listing live; install works; description triggers include CoT Question Cards, plan alignment, Goal Contract, AskUserQuestion; name is CoT Question Cards not Grill. Regression after cold install.
 
 **Multi-host conformance:** Same SKILL.md passes timing evals on Claude Code, Cursor, Codex, Grok Bot, OpenCode stubs. Gates DQ adapters that inject Satisfied Card into Phase 1.
 
-### Onboarding drills
-
-1. When is Satisfied Card legal? → Post-Execution Regression only  
-2. How many Optimized Solutions? → Exactly one  
-3. Who writes Goal Contract? → Agent, after Phase 1, no confirm card  
-4. Mid-fission voting? → No  
-5. One-off A/B/C? → choice-cards  
-6. Three host primitives? → AskUserQuestion, AskQuestion, request_user_input  
-7. Related prior art we do not brand as ourselves? → grill-me, grilling, grill-with-docs  
 
 ---
 
-## Closing reminder
-
-If you remember only four lines:
-
-1. The English product name is **Question Cards** (skill id `question-cards`) — never Grill.  
-2. Phase 1 is **Macro Cards** only — no Satisfied Card in that deck.  
-3. Phase 2 returns **exactly one** Optimized Solution — no mid-fission votes.  
-4. Ask satisfied **only after** the Optimized Solution has been **executed**, in **Post-Execution Regression**.
-
-Install the skill bodies, not only this README:
-
-- [`skills/question-cards/SKILL.md`](./skills/question-cards/SKILL.md)
-- [`skills/choice-cards/SKILL.md`](./skills/choice-cards/SKILL.md)
-
-Clone: [https://github.com/StockOnLLC/cot-question-cards](https://github.com/StockOnLLC/cot-question-cards)
-
-License: MIT.
 
 ---
 
@@ -1431,7 +1357,7 @@ License: MIT.
 
 ## 闪电问是什么
 
-**闪电问**是 **CoT Question Cards**（Chain of Thought Question Cards）的中文名。Skill id：`question-cards`（兼容 `cot-question-cards`）。不要叫「问题卡」，不要叫 Grill / grill-me。
+**闪电问**是 **CoT Question Cards**（Chain of Thought Question Cards）的中文名。Skill id：`question-cards`（兼容 `cot-question-cards`）。
 
 它是一套 Agent Skill（`SKILL.md`），用来对齐计划或设计：先问宏观题，再由 Agent 内部多方案裂变，只交付并**执行**一个唯一最优方案，最后才在回归环问是否满意。
 
@@ -1489,13 +1415,13 @@ Web IDE（Codespaces / Gitpod 等）：优先把 `.agents/skills/question-cards`
 
 ## 套件
 
-- 核心：`skills/question-cards/SKILL.md`（闪电问 / Question Cards）
+- 核心：`skills/question-cards/SKILL.md`（闪电问 / CoT Question Cards）
 - 兼容别名：`skills/cot-question-cards/`（薄跳转；安装请优先 `question-cards`）
 - 轻量单次选择：`skills/choice-cards/SKILL.md`（完整对齐仍用闪电问）
 
 ## 和 grill-me / AskUserQuestion 的关系（一句话）
 
-卡片交互可以同类（AskUserQuestion / AskQuestion / request_user_input / 控件），但**时序与产出不同**：不叫 Grill；不中途投票；先执行再问满意；产出是唯一最优方案。中文名只用**闪电问**，不要叫「问题卡」。
+卡片交互可以同类（AskUserQuestion / AskQuestion / request_user_input / 控件），但**时序与产出不同**：不叫 Grill；不中途投票；先执行再问满意；产出是唯一最优方案。中文产品名是**闪电问**。
 
 ## 许可
 

@@ -1,16 +1,15 @@
 ---
 name: question-cards
 description: >-
-  Question Cards. Use when aligning a plan or design: Phase 1 Macro Cards only
+  CoT Question Cards. Use when aligning a plan or design: Phase 1 Macro Cards only
   (no satisfaction); Agent Multi-Scheme Fission to one Optimized Solution then
   execute; ask Satisfied Card only at Post-Execution Regression. Works with
   Claude Code, Cursor, Codex, WorkBuddy/CodeBuddy, OpenCode, Gemini CLI,
   CoTree/contree, and Agent Skills clients.
 ---
-# Question Cards
+# CoT Question Cards
 
-**External English product name only:** Question Cards.  
-Never brand this as Grill, grill-me, grilling, or grill-with-docs. Those names belong to related prior art and search neighborhoods; this skill is a different loop with Hard Timing rules. The Chinese product name lives only in the repository Chinese appendix — do not paste Chinese product labels into English skill copy.
+**External English product name only:** CoT Question Cards.  
 
 **Hard Timing (non-negotiable)**
 
@@ -210,7 +209,7 @@ Phase 1 → take current 🟢. Phase 3 regression → adopt / close.
 
 ## vs Code Fission
 
-| Code Fission | In Question Cards |
+| Code Fission | In CoT Question Cards |
 | --- | --- |
 | Outer feature | Phase 1 Goal Contract = acceptance (Agent-written, no mid confirm card) |
 | Inner tournament | Phase 2 Multi-Scheme Fission + gates → **one** Optimized Solution |
@@ -219,4 +218,4 @@ Phase 1 → take current 🟢. Phase 3 regression → adopt / close.
 | Re-open round | Post-execute unsatisfied → feedback → Phase 2 again |
 | Don't ask non-workers | No micro preference votes mid-fission |
 
-Full Code Fission release tournaments (10–20 variants, real fixtures) stay in Code Fission proper. Question Cards only borrows the **select-one-champion skeleton** at plan layer (2–5 variants → **exactly one** Optimized Solution).
+Full Code Fission release tournaments (10–20 variants, real fixtures) stay in Code Fission proper. CoT Question Cards only borrows the **select-one-champion skeleton** at plan layer (2–5 variants → **exactly one** Optimized Solution).

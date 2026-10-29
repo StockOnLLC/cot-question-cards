@@ -2,11 +2,11 @@
 name: choice-cards
 description: >-
   Lightweight A/B/C option cards for a single pick. For plan or design alignment
-  with a decision tree, use Question Cards (skills/question-cards) instead.
+  with a decision tree, use CoT Question Cards (skills/question-cards) instead.
 ---
 # choice-cards
 
-**Prefer [Question Cards](../question-cards/SKILL.md)** whenever you are aligning a plan or design through multiple decisions.
+**Prefer [CoT Question Cards](../question-cards/SKILL.md)** whenever you are aligning a plan or design through multiple decisions.
 
 Use this skill only for a **one-off** pick (2–4 options, no decision tree).
 
