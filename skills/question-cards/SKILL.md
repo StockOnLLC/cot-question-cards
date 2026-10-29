@@ -1,221 +1,211 @@
 ---
 name: question-cards
 description: >-
-  CoT Question Cards. Use when aligning a plan or design: Phase 1 Macro Cards only
-  (no satisfaction); Agent Multi-Scheme Fission to one Optimized Solution then
-  execute; ask Satisfied Card only at Post-Execution Regression. Works with
-  Claude Code, Cursor, Codex, WorkBuddy/CodeBuddy, OpenCode, Gemini CLI,
-  CoTree/contree, and Agent Skills clients.
+  Use when aligning a plan or design through Question Cards／问题卡: bilingual EN+ZH
+  — fuzzy goal + samples/research first, then concrete macros, agent fission,
+  micro structure cards, then satisfied loop (unsatisfied → re-macro → micro).
+  Color marks define meaning only (multiple greens OK); never number questions.
 ---
-# CoT Question Cards
+# Question Cards／问题卡
 
-**External English product name:** CoT Question Cards (skill id `question-cards`).  
+**English product name:** CoT Question Cards (repo `StockOnLLC/cot-question-cards`).  
+**Chinese product name (appendix):** 闪电问.  
+**Skill id / folder:** `question-cards` (compat alias `cot-question-cards`).  
+**External name only:** Question Cards／问题卡. Never call this Grill.
 
-**Hard Timing (non-negotiable)**
+## Master loop／总循环（Deon 2026-10-29 V2）
 
-- **Satisfied Cards MUST NOT appear with Phase 1 Macro Cards.**
-- Ask **satisfied only after:** (1) user answered Phase 1, (2) Agent delivered the unique Optimized Solution **and executed it**, (3) **Post-Execution Regression** round.
+Must follow／必须按序:
 
-**Master Loop (must follow in order)**
+1. **糊目标＋样本／调研**（第一轮）— rough effect + samples or research analogs  
+2. **具象宏观** — cover aspects (product surface, cadence, granularity, scope, bedrock…)  
+3. **Agent 内裂变自测** — combine variants, test effects, pick one champion draft  
+4. **微观结构卡** — refine the champion with user on load-bearing micro structure  
+5. **满意卡** — if unsatisfied → back to **更宏观** re-ask → micro again → loop until fully satisfied  
 
-1. Phase 0 — First Principles (private): surface ask vs bedrock vs inherited.
-2. Phase 1 — Macro Cards only (2–3 load-bearing). No Satisfied Card. No “adopt Optimized Solution” card.
-3. Agent writes **Goal Contract** privately from answers (no confirm card) → Phase 2 **Multi-Scheme Recursive Fission** + gates internally (no mid-ask).
-4. Return **exactly one** **Optimized Solution** and **execute it**.
-5. Phase 3 — **only then** ask satisfied (Post-Execution Regression) → recurse or rewrite Goal Contract until confirmed.
+Plain／白话: 先糊 → 样本或调研 → 面面宏观 → 自己裂变测 → 再问微观 → 满意；不满就宏观重问再微观，轮询到满意。
 
-Micro variants are Skill-driven Agent work — never preference-vote the user on A vs B mid-fission.
+**Hard rules still in force／仍硬:**
 
----
-
-## Phase 0 · First Principles (required before any card)
-
-Short private breakdown (show conclusion only if useful):
-
-1. One sentence: surface ask
-2. Assumptions: **bedrock** (hard / proven) vs **inherited** (habit, analogy, fashion)
-3. Inherited must not sneak into the goal; surface them in Phase 1 copy
-
----
-
-## Phase 1 · Macro Cards only (only dense user cards)
-
-**Aim:** Make “what success is” crystal clear. No fission until clear.
-
-### Ask only (gap-driven)
-
-- Success look like (checkable, not adjectives)
-- For whom / not for whom; out of scope
-- Bedrock constraints
-- Cost of being wrong (gate tightness)
-
-Round 1: **2–3 load-bearing Macro Cards**. Clear = executable + no blocking fog. Else expand 1–3 on the foggy macro branch only.
-
-**Do not ask:** impl details, module picks, APIs, UI micro — Phase 2 Agent fission.
-
-### Forbidden in Phase 1
-
-- Any **Satisfied / not satisfied / adopt Optimized Solution** card (Phase 3 regression only)
-- Bundling a Goal-Contract “confirm / start” card in the same swipe deck as Macro Cards
-- Phrasing contract lock as “adopt Optimized Solution”
-
-After Phase 1 answers are clear, Agent **privately** writes a short **Goal Contract** and proceeds to Phase 2 **with no user card**:
-
-```markdown
-## Goal Contract
-- Success: …
-- Scope / non-goals: …
-- Bedrock: …
-- Gates: …
-- Regression: ask satisfied **only after** Optimized Solution is executed
-```
-
-If later regression shows the macro was wrong → back to Phase 1 (not a mid-Phase-1 satisfaction ask).
+- 满意卡 **never** mixed into the first fuzzy／macro decks；它只出现在「有产出之后」  
+- 裂变中途 **禁止** 拿半成品多方案让用户投票（裂变＝Agent 内；微观卡＝裂变出冠军草案之后）  
+- Cards follow **user language**；Skill body EN+ZH  
+- 题目前 **不加** `①` `②` `③`／Q1（美观）  
+- 题目前 **禁止** `❓` `❗` `🚨` 等问号／警示 emoji（只写问题句）  
+- 🟢🟡🔴🔵 **只定义含义，不限个数／配比**（可三绿）  
+- Grok **必须**原生 `type:widget`；**禁止**用 markdown 子弹冒充可点卡
 
 ---
 
-## Phase 2 · Multi-Scheme Fission (Agent-private; never ask user)
+## Phase F · Fuzzy goal + samples／阶段 F · 糊目标＋样本（always first／永远第一轮）
 
-Borrow the **select-one-champion skeleton** from Code Fission-style inner loops at the plan layer. **Never card mid-variants to the user.**
+**Aim:** Lock a *rough* effect — “大概在做什么／想达到什么感觉”，不要一上来就拆模块。
 
-### 2.1 Seed
+### Always ask／必问
 
-From the Goal Contract:
+- Rough success feeling（可含糊，但要能复述）／大致想达到什么效果  
+- **Samples／具象样本:**
+  - 用户有没有类似工具／产品／流程可参照？  
+  - **或** Agent 先调研类似物，整理候选让用户选（可同一轮出「我有样本」vs「你去调研」）
 
-- Primary metric / gates
-- Guardrails (brand rules, safety, Hard Timing)
-- Seeds: 1 default draft + ≤2 distinct directions (≤3 seeds)
+### Research fork／调研叉
 
-### 2.2 Expand
+If the fuzzy goal mixes multiple tool-kinds（例：多 Agent 前端 + 设计后端内核）→ **research before** dense macros:
 
-Expand to **2–5** executable schemes (default 3, max 5). One lever class per variant.
+1. Agent researches public analogs（短列表＋各一句差异）  
+2. Card: user picks which analogs to lean on（可多绿）  
+3. Only then enter Phase 1 concrete macros  
 
-Each scheme must include:
+If user already pasted samples → skip research；carry samples into Phase 1.
 
-| Field | Requirement |
+### Forbidden in Phase F／阶段 F 禁止
+
+- 满意卡  
+- 细到 API／组件／颜色 token  
+- 假装糊目标已经是验收标准  
+
+After F answers: Agent privately writes a **Fuzzy Brief／糊目标简报**（1 小段 + samples／analogs 列表），**不出确认卡**，进入 Phase 1。
+
+---
+
+## Phase 1 · Concrete macros／阶段 1 · 具象宏观
+
+**Aim:** 把糊目标问到「面面都盖到」——前端／交互、周期性／节奏、目标颗粒度、为谁／不为谁、硬约束、做错代价等。有缺口才问。
+
+Round size: **2–5** load-bearing cards（可左右滑）。Clear＝可执行核对 + 无阻塞模糊；否则只在模糊枝再扩。
+
+**Do not ask yet／此时仍不问:** 微观实现细节（具体组件树、字段名）— 留给 Phase 3。
+
+After all Phase 1 answers: Agent privately writes **Goal Contract／目标契约**（成功标准／范围／基岩／闸门／参照样本），**无用户确认卡** → Phase 2。
+
+---
+
+## Phase 2 · Agent fission／阶段 2 · Agent 内裂变自测（不问用户）
+
+From Goal Contract + samples:
+
+1. Seeds ≤3 → expand **2–5** schemes（一次改一类杠杆）  
+2. Each scheme: How／Fail-rollback／Fit／Risk／Lever  
+3. **Self-test** combinations／effects against gates（能跑通的留下）  
+4. Pick **one champion draft**（唯一草案）  
+
+**Forbidden:** mid-fission “你更喜欢 A 还是 B？”；禁止甩 2–5 个半成品给用户多选。
+
+Output: **Champion Draft／冠军草案**（还不是最终收尾）→ Phase 3。
+
+---
+
+## Phase 3 · Micro structure／阶段 3 · 微观结构（对用户出卡）
+
+Only **after** a Champion Draft exists. Ask load-bearing micro structure that changes the draft（例：信息架构块、节奏触发、颗粒度档、关键状态机）— **≤3 cards／轮**；清晰即停。
+
+Not preference-voting random cosmetics. If micro answers contradict Goal Contract → 🔴 jump back to Phase 1 macros.
+
+After micro answers: Agent **revises** champion → produce **Optimized Solution／最优方案（唯一项）** and **execute／落地** what can be shipped now → Phase S.
+
+---
+
+## Phase S · Satisfied loop／阶段 S · 满意循环（最后才出）
+
+Only after Optimized Solution is delivered／executed:
+
+- 🟢 满意，采用并收尾  
+- 🟡 不满意——请说具体哪里不对 → Agent 回到 **Phase 1 更宏观** 再问 → Phase 2 → Phase 3 → 再满意  
+- 🔴 宏观写错／样本选错 → 回 Phase F 或 Phase 1  
+- 🔵 要扩充  
+
+**Loop until fully satisfied.** Never assume done without this card. Two unsatisfied rounds that are actually fuzzy-goal wrong → force Phase F.
+
+---
+
+## Card delivery／卡片交付
+
+### Copy／文案
+
+- Detailed question; option **labels** stay short（一行可点）  
+- Option **subtitles／副标** must be long enough to answer「选这个等于什么／会怎样」——至少一句完整后果或边界，禁止只剩口号词  
+- On Grok: put the long subtitle in each option's `description`（宿主显示在 label 下）  
+- **No question numbering**（禁止 `①` `②` `③`、第一题／Q1）  
+- **No leading question-mark emoji**（禁止题目前 `❓` `❗` `🚨`）  
+- User language only on cards  
+
+### Options／色义（只定含义，不限配比）
+
+| Mark | Meaning |
 | --- | --- |
-| How | modules, steps, data flow, hook-in |
-| Fail / rollback | where it dies; how to restore |
-| Fit | which contract lines |
-| Risk | inherited assumptions marked |
-| Lever | path / cut / integration / feedback loop… |
+| 🟢 | Best／推荐／可放心选 |
+| 🟡 | Acceptable／可以做／有代价但可接受 |
+| 🔴 | Risky／不建议／偏重或有风险 |
+| 🔵 | Need expand／先深入解释，再给更多题 |
 
-**Agent order:** write seed A → mutate one lever → B/C/(D/E) → fill table → gate in 2.3. Self-research facts; BLOCKED variants stay out of ranking. Missing user-only secrets that change gates → one Phase 1 Macro Card, not a micro ask.
+同一题可多个🟢；禁止「必须一绿一黄一红」。Usually 3–5 substance + 🔵 when useful + host `allowCustom`. No `A｜` in labels.
 
-### 2.3 Gate and pick (Agent-only)
+### Multi-Q／多题
 
-1. Hard gate fail → DQ
-2. Guardrail hit → DQ or demote
-3. Rank survivors: closer to success, fewer inherited assumptions, more rollbackable, fewer new systems → pick **one champion**
-4. Optional runner-up for one-line contrast only — **never** present two “winners”
+Prefer swipe `steps`. Keep Phase F／1／3／S in **separate decks／turns** — 不要把满意卡塞进糊目标或宏观滑组。
 
-**Output of Phase 2 is always a single Optimized Solution.** No dual champions. No “pick A or B.”
+### Platforms／平台
 
-### 2.4 Forbidden
+**Hard UX／硬交互**
 
-- Mid-fission “which variant do you prefer?”
-- Dumping 2–5 half-baked schemes for user multi-select
-- Vibes without gates
+- 题目前 **禁止** `❓` `❗` `🚨` 等问号／警示 emoji（只写问题句）。  
+- Grok Bot **必须** `SendToUser type:widget`（`prompt` + `options`；🟢→`style:primary`；🔴→`style:danger`；`allowCustom`）。**禁止**用 markdown 子弹冒充可点卡。  
+- 电脑与手机 **同一套** widget API；无「手机另一套调用」。  
+- 外频道（Slack 等）无 widget → 编号列表 + 请用户回选项原文（诚实降级，不叫「卡」）。
 
----
-
-## Phase 3 · Execute Optimized Solution + Post-Execution Regression
-
-1. Deliver **one** Optimized Solution — never a shortlist (short prose OK; **no** Satisfied Card yet)
-2. **Execute** that solution (ship / push / apply — whatever the Goal Contract defined as done)
-3. **Only after execution**, open **Post-Execution Regression** with the Satisfied Card:
-
-   - 🟢 **Satisfied — adopt / close** → freeze; close
-   - 🟡 **Not satisfied — recurse** → capture concrete feedback → **Phase 2 again** → new unique Optimized Solution → **execute again** → ask satisfied again
-   - 🔴 **Macro gate wrong** → Phase 1 rewrite Goal Contract
-   - 🔵 Need expand
-
-**Regression rules:**
-
-- Satisfied Card appears **only** post-execution — never with Phase 1, never before operate
-- Dissatisfaction needs **specific feedback** before re-fission (no empty spin)
-- Two unsatisfied rounds with feedback that is actually macro → force Phase 1
-- Until user confirms at regression, the loop continues
-
-Delivered Optimized Solution copy (pre-execute, no card) should still cover: how, why it passed gates, fail/rollback, key tradeoffs; one line on directions that lost.
-
----
-
-## Phase 4 · Micro tweak (default OFF)
-
-Only if user **explicitly** asks to choose one load-bearing detail **inside** the adopted Optimized Solution. ≤3 cards/round; clear → stop. No full-tree reopen.
-
----
-
-## Card delivery (Phases 1 / 3 / 4)
-
-### Copy
-
-- Detailed question; short option labels
-- Multi-Q prefix: `①` `②` `③`
-- Long clear subtitles
-- User-facing cards follow **user language**. Skill body stays English.
-
-### Options
-
-- Usually 3 substance + 🔵 + host custom
-- No `A｜` inside labels
-- 🟢 / 🟡 / 🔴 / 🔵 (🔵 = expand first, then new cards)
-- If `allowCustom` / Something else exists, do **not** add a duplicate “I'll write it”
-
-### Multi-Q
-
-Prefer swipe steps (Grok `steps`). **Macro Cards only in Phase 1** — never mix in regression satisfaction.
-
-### Platforms
-
-| Host | How |
+| Host | Primitive／原语 |
 | --- | --- |
-| Grok Bot | widget; `steps`; `allowCustom`; green `primary`; red `danger` |
+| Grok Bot（in-app 桌面） | `type:widget`；多题 `steps`／分条；`allowCustom` |
+| Grok Bot（iOS／Android） | **同一** widget API；若只有标题条、选项体空白＝**客户端渲染 bug**（勿改 markdown）→ 请用户改桌面打开同一聊，或打字回选项原文 |
 | Claude Code | `AskUserQuestion` |
-| OpenCode / Gemini | `question` / `ask_user` |
-| Cursor | AskQuestion or text card |
-| Codex / CoTree / other | text card |
+| Cursor | `AskQuestion`（会话有则必须用） |
+| Codex | `request_user_input` |
+| OpenCode | `question` |
+| Gemini CLI | `ask_user` |
+| CoTree | 装进目标宿主后用**该宿主**原语（CoTree 本身不出卡） |
+| 其他／原语缺失 | text card（色标）+ 明确写「非可点」 |
 
-### “You decide” / “whatever”
+### “You decide／随便”
 
-Phase 1 → take current 🟢. Phase 3 regression → adopt / close.
+Phase F／1 → take a current 🟢. Phase S → adopt／close.
 
 ---
 
-## End artifact
+## End artifact／结束物
 
 ```markdown
-## Goal Contract
+## Fuzzy Brief／糊目标简报
+- Rough effect: …
+- Samples／analogs: …
+
+## Goal Contract／目标契约
+- Success／Scope／Bedrock／Gates: …
+
+## Optimized Solution／最优方案（唯一项）
 …
 
-## Optimized Solution (singular)
+## Internal bake-off／比选摘要
+- Variants: N; Passed: M; Winner: …
+
+## Micro refinements／微观修订
 …
 
-## Internal bake-off (Agent-private)
-- Variants: N; Passed: M; Winner: …; DQ one-liners
-
-## Execution record
+## Execution／执行记录
 → What shipped: …
 
-## Post-Execution Regression
-→ Satisfied close | Feedback → round k fission
-
-## User confirm (post-execute only)
-→ Adopt / close | Re-fission | Rewrite Goal Contract
+## Regression／满意循环
+→ Satisfied close | Feedback → re-macro round k
 ```
 
 ---
 
-## vs Code Fission
+## vs old V1 timing／相对旧版
 
-| Code Fission | In CoT Question Cards |
+| Old V1 | V2 |
 | --- | --- |
-| Outer feature | Phase 1 Goal Contract = acceptance (Agent-written, no mid confirm card) |
-| Inner tournament | Phase 2 Multi-Scheme Fission + gates → **one** Optimized Solution |
-| Hard gates / guardrails | From Goal Contract + brand rules; Agent judges |
-| Freeze → ship | Phase 3 **execute** first, then Post-Execution Regression |
-| Re-open round | Post-execute unsatisfied → feedback → Phase 2 again |
-| Don't ask non-workers | No micro preference votes mid-fission |
+| Start at dense macros | Start at **fuzzy + samples／research** |
+| Micro never asked | Micro asked **after** champion draft |
+| Satisfied only post-execute once | Satisfied **loops**：不满 → 宏观重问 → 微观 → 再满意 |
+| No explicit research fork | Research when fuzzy goal mixes tool-kinds |
 
-Full Code Fission release tournaments (10–20 variants, real fixtures) stay in Code Fission proper. CoT Question Cards only borrows the **select-one-champion skeleton** at plan layer (2–5 variants → **exactly one** Optimized Solution).
+Color／no-numbering rules from the same day stay.
