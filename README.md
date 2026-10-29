@@ -1,4 +1,4 @@
-# Question Cards
+# CoT Question Cards
 
 **Public Agent Skill** for aligning any plan or design — without mid-flight A/B votes.
 
@@ -10,10 +10,10 @@
 [![Related](https://img.shields.io/badge/vs-grill--me%20%7C%20AskUserQuestion%20%7C%20grilling-orange.svg)](#positioning-versus-grill-me-grilling-and-askuserquestion)
 [![SEO](https://img.shields.io/badge/Agent%20Skill-plan%20alignment%20%7C%20Goal%20Contract-informational.svg)](#seo-and-discovery-keywords)
 
-> **External product name (English):** **Question Cards** only.  
+> **External product name (English):** **CoT Question Cards** (Chain of Thought Question Cards).  
 > **Never brand this product as Grill, grill-me, grilling, or grill-with-docs.** Those names belong to related prior art and search neighborhoods; this skill is a different loop with Hard Timing rules. The Chinese product name lives only in the Chinese appendix at the end of this README — never use the common mistranslation that means “question card” as the product name.
 
-**Repository:** [https://github.com/StockOnLLC/question-cards](https://github.com/StockOnLLC/question-cards)
+**Repository:** [https://github.com/StockOnLLC/cot-question-cards](https://github.com/StockOnLLC/cot-question-cards)
 
 
 <p align="center">
@@ -158,7 +158,7 @@ That is why this document stays long on purpose — without claiming ownership o
 | Mid-fission votes | Often yes | Possible if author dumps schemes | N/A (single pick) | **Forbidden** |
 | Satisfied timing | Often early or ad hoc | Author-dependent | N/A | **Post-Execution Regression only** |
 | Output shape | Shared understanding / plan text | Answers to questions | A single pick | **Exactly one** Optimized Solution + **execute** |
-| Naming | Grill / grill-me / grilling | Tool names | choice-cards | **Question Cards** only |
+| Naming | Grill / grill-me / grilling | Tool names | choice-cards | **CoT Question Cards** |
 
 ### What we borrow (inspiration, not forks)
 
@@ -401,7 +401,7 @@ After Phase 1 clarity exit, **Agent-private**, with **no** user confirm card. Pr
 
 ```markdown
 ## Goal Contract
-- Success: https://github.com/StockOnLLC/question-cards is public; MIT LICENSE; README is English-first with Chinese appendix only; skills/question-cards/SKILL.md and skills/choice-cards/SKILL.md present; topics include agent-skill, question-cards, askuserquestion, grill-me (as related search), goal-contract, optimized-solution.
+- Success: https://github.com/StockOnLLC/cot-question-cards is public; MIT LICENSE; README is English-first with Chinese appendix only; skills/question-cards/SKILL.md and skills/choice-cards/SKILL.md present; topics include agent-skill, question-cards, askuserquestion, grill-me (as related search), goal-contract, optimized-solution.
 - Scope / non-goals: No Grill product branding; no bilingual mash in the English README body; no mid-fission user votes in the skill rules.
 - Bedrock: External English name is Question Cards (id question-cards); Satisfied Card only post-execute; unique Optimized Solution required.
 - Gates: DQ schemes that insert Satisfied Card into Phase 1; DQ dual champions.
@@ -590,13 +590,13 @@ Compatible with the **Agent Skills** layout (`SKILL.md` + YAML frontmatter). For
 **Compat alias folder:** `skills/cot-question-cards` (thin redirect; prefer canonical for new installs).
 
 **English product name:** Question Cards  
-**Repo:** https://github.com/StockOnLLC/question-cards  
+**Repo:** https://github.com/StockOnLLC/cot-question-cards  
 **Related search nouns (not product identity):** question cards, AskUserQuestion, AskQuestion, request_user_input, choice-cards, grill-me, grilling, plan alignment, Goal Contract, Optimized Solution, Agent Skills, SKILL.md, Terminal Skills, agentskills.io, CoTree, contree
 
 ### Universal clone
 
 ```bash
-git clone https://github.com/StockOnLLC/question-cards.git
+git clone https://github.com/StockOnLLC/cot-question-cards.git
 cd question-cards
 # Core skill body:
 #   skills/question-cards/SKILL.md
@@ -610,9 +610,9 @@ cd question-cards
 
 ```bash
 # Conceptual — exact flags follow your catalog version
-npx skills add StockOnLLC/question-cards
+npx skills add StockOnLLC/cot-question-cards
 # or point at the skill subfolder explicitly if the installer supports it:
-# npx skills add StockOnLLC/question-cards/skills/question-cards
+# npx skills add StockOnLLC/cot-question-cards/skills/question-cards
 ```
 
 Verify the destination folder name is **`question-cards`** and frontmatter `name: question-cards`.
@@ -811,7 +811,7 @@ cp -R skills/question-cards .grok/skills/question-cards
 ### 8. Terminal Skills / npx skills add / agentskills.io catalogs
 
 ```bash
-npx skills add StockOnLLC/question-cards
+npx skills add StockOnLLC/cot-question-cards
 # After install, verify destinations contain:
 #   .../question-cards/SKILL.md
 #   .../choice-cards/SKILL.md   # if companion selected
@@ -976,7 +976,7 @@ ls ~/.codex/skills/question-cards/SKILL.md
 Prefer **project-committed** skill folders (ephemeral home dirs wipe).
 
 ```bash
-git clone https://github.com/StockOnLLC/question-cards.git /tmp/question-cards
+git clone https://github.com/StockOnLLC/cot-question-cards.git /tmp/question-cards
 mkdir -p .claude/skills .agents/skills .cursor/skills .codex/skills
 cp -R /tmp/question-cards/skills/question-cards .claude/skills/
 cp -R /tmp/question-cards/skills/question-cards .agents/skills/
@@ -1167,7 +1167,7 @@ AskUserQuestion muscle memory stays; timing changes.
 | Mid-fission A/B/C scheme vote | Agent-private Multi-Scheme Fission |
 | Dual champions presented | Exactly one Optimized Solution |
 | Goal Contract confirm swipe with macros | Agent writes Goal Contract privately |
-| Branding as Grill / grill-me | Question Cards only |
+| Branding as Grill / grill-me | CoT Question Cards only |
 | Bilingual mash in English README body | Chinese appendix only at end |
 | Stopping at “alignment” without execute | Execute before Satisfied Card |
 | Micro polls during Phase 1/2 | Macro Cards only; micro = Agent or Phase 4 explicit |
@@ -1335,7 +1335,7 @@ MIT — see [LICENSE](LICENSE). Copyright (c) 2026 StockOn.
 
 ## Links
 
-- Repo: [https://github.com/StockOnLLC/question-cards](https://github.com/StockOnLLC/question-cards)
+- Repo: [https://github.com/StockOnLLC/cot-question-cards](https://github.com/StockOnLLC/cot-question-cards)
 - Core skill: [`skills/question-cards/SKILL.md`](./skills/question-cards/SKILL.md)
 - Compat alias: [`skills/cot-question-cards/SKILL.md`](./skills/cot-question-cards/SKILL.md)
 - Companion: [`skills/choice-cards/SKILL.md`](./skills/choice-cards/SKILL.md)
@@ -1417,7 +1417,7 @@ Install the skill bodies, not only this README:
 - [`skills/question-cards/SKILL.md`](./skills/question-cards/SKILL.md)
 - [`skills/choice-cards/SKILL.md`](./skills/choice-cards/SKILL.md)
 
-Clone: [https://github.com/StockOnLLC/question-cards](https://github.com/StockOnLLC/question-cards)
+Clone: [https://github.com/StockOnLLC/cot-question-cards](https://github.com/StockOnLLC/cot-question-cards)
 
 License: MIT.
 
@@ -1426,7 +1426,7 @@ License: MIT.
 # Chinese appendix
 
 > 以下为给中文操作者的简明附录。英文正文保持纯英文；中英不要在同一句或同一表头里混写。  
-> 中文对外产品名：**闪电问**。英文名：**Question Cards**。Skill id：`question-cards`。不要叫「问题卡」，不要叫 Grill / grill-me。
+> 中文对外产品名：**闪电问**。英文名：**CoT Question Cards**。Skill id：`question-cards`。不要叫「问题卡」，不要叫 Grill / grill-me。
 
 <p align="center">
   <img src="docs/brand/wordmark-shandianwen.png" alt="闪电问 Question Cards" width="70%" />
@@ -1460,7 +1460,7 @@ License: MIT.
 Skill 目录：`skills/question-cards`（及配套 `skills/choice-cards`）。文件夹名必须等于 frontmatter `name`：`question-cards`。兼容别名：`skills/cot-question-cards`（新安装请优先 `question-cards`）。
 
 ```bash
-git clone https://github.com/StockOnLLC/question-cards.git
+git clone https://github.com/StockOnLLC/cot-question-cards.git
 cd question-cards
 
 # Claude Code / Coco
@@ -1482,7 +1482,7 @@ mkdir -p ~/.codebuddy/skills && cp -R skills/question-cards ~/.codebuddy/skills/
 # 路径见英文「Installation」主表与分节
 
 # CoTree / contree：把同一文件夹装进 contree 规格指向的各宿主目录（claude:~、codex:~、opencode:~、amp:~、cline:~）；也可用手动 cp
-# 通用安装器（若目录支持）：npx skills add StockOnLLC/question-cards
+# 通用安装器（若目录支持）：npx skills add StockOnLLC/cot-question-cards
 ```
 
 Web IDE（Codespaces / Gitpod 等）：优先把 `.agents/skills/question-cards` **提交进项目**；无 skills 目录时把 `SKILL.md` 粘贴进自定义说明／Agent 提示。
@@ -1503,4 +1503,4 @@ Web IDE（Codespaces / Gitpod 等）：优先把 `.agents/skills/question-cards`
 
 MIT — 见 [LICENSE](LICENSE)。
 
-仓库：[https://github.com/StockOnLLC/question-cards](https://github.com/StockOnLLC/question-cards)
+仓库：[https://github.com/StockOnLLC/cot-question-cards](https://github.com/StockOnLLC/cot-question-cards)
