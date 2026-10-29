@@ -9,7 +9,7 @@ description: >-
 ---
 # CoT Question Cards
 
-**External English product name only:** CoT Question Cards.  
+**External English product name:** CoT Question Cards (skill id `question-cards`).  
 
 **Hard Timing (non-negotiable)**
 
