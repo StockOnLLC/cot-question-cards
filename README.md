@@ -597,7 +597,7 @@ Compatible with the **Agent Skills** layout (`SKILL.md` + YAML frontmatter). For
 
 ```bash
 git clone https://github.com/StockOnLLC/cot-question-cards.git
-cd question-cards
+cd cot-question-cards
 # Core skill body:
 #   skills/question-cards/SKILL.md
 # Compat alias (optional):
@@ -1425,17 +1425,15 @@ License: MIT.
 
 # Chinese appendix
 
-> 以下为给中文操作者的简明附录。英文正文保持纯英文；中英不要在同一句或同一表头里混写。  
-> 中文对外产品名：**闪电问**。英文名：**CoT Question Cards**。Skill id：`question-cards`。不要叫「问题卡」，不要叫 Grill / grill-me。
-
 <p align="center">
-  <img src="docs/brand/wordmark-shandianwen.png" alt="闪电问 Question Cards" width="70%" />
+  <img src="docs/brand/wordmark-shandianwen.png" alt="闪电问 · CoT Question Cards" width="70%" />
 </p>
-
 
 ## 闪电问是什么
 
-**闪电问**（英文 Question Cards）是一套 Agent Skill（`SKILL.md`），用来对齐计划或设计：先问宏观题，再由 Agent 内部多方案裂变，只交付并**执行**一个唯一最优方案，最后才在回归环问是否满意。
+**闪电问**是 **CoT Question Cards**（Chain of Thought Question Cards）的中文名。Skill id：`question-cards`（兼容 `cot-question-cards`）。不要叫「问题卡」，不要叫 Grill / grill-me。
+
+它是一套 Agent Skill（`SKILL.md`），用来对齐计划或设计：先问宏观题，再由 Agent 内部多方案裂变，只交付并**执行**一个唯一最优方案，最后才在回归环问是否满意。
 
 ## 硬时序（必须遵守）
 
@@ -1461,7 +1459,7 @@ Skill 目录：`skills/question-cards`（及配套 `skills/choice-cards`）。�
 
 ```bash
 git clone https://github.com/StockOnLLC/cot-question-cards.git
-cd question-cards
+cd cot-question-cards
 
 # Claude Code / Coco
 mkdir -p ~/.claude/skills && cp -R skills/question-cards ~/.claude/skills/question-cards
