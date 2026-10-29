@@ -2,11 +2,11 @@
 name: choice-cards
 description: >-
   Lightweight A/B/C option cards for a single pick. For plan/design alignment
-  with a decision tree, use Question Cards（问题卡） instead.
+  with a decision tree, use CoT Question Cards（闪电问） instead.
 ---
 # choice-cards
 
-**Prefer [Question Cards](sand-workflow:skill-1793255987753)（问题卡）** whenever you are aligning a plan or design through multiple decisions.
+**Prefer [CoT Question Cards / 闪电问](../cot-question-cards/SKILL.md)** whenever you are aligning a plan or design through multiple decisions.
 
 Use this skill only for a **one-off** pick (2–4 options, no decision tree).
 
